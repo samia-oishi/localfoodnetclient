@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router";
 import { FaStar } from "react-icons/fa";
+import { API } from "../constants/api";
 
 export const ReviewDetails = () => {
   const { id } = useParams();
@@ -8,7 +9,7 @@ export const ReviewDetails = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch(`${import.meta.env.VITE_API_URL}/reviews/${id}`)
+    fetch(`${API}/reviews/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setReview(data);

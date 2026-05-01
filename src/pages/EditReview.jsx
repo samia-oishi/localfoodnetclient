@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router";
 import { toast } from "react-toastify";
 import { CATEGORIES } from "../constants/categories";
+import { API } from "../constants/api";
 
 export const EditReview = () => {
   const { id } = useParams();
@@ -10,7 +11,7 @@ export const EditReview = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch(`${import.meta.env.VITE_API_URL}/reviews/${id}`)
+    fetch(`${API}/reviews/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setReview(data);
@@ -33,7 +34,7 @@ export const EditReview = () => {
     };
 
     try {
-      const res = await fetch(`${import.meta.env.VITE_API_URL}/reviews/${id}`, {
+      const res = await fetch(`${API}/reviews/${id}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(updatedReview),

@@ -3,6 +3,7 @@ import { useNavigate } from "react-router";
 import { AuthContext } from "../provider/AuthProvider";
 import { toast } from "react-toastify";
 import { FaPen, FaTrash, FaEnvelope, FaCalendar } from "react-icons/fa";
+import { API } from "../constants/api";
 
 export const MyProfile = () => {
   const { user, updateUserProfile, deleteAccount, logOutUser } =
@@ -15,8 +16,6 @@ export const MyProfile = () => {
   const [saving, setSaving] = useState(false);
   const [confirmDelete, setConfirmDelete] = useState(false);
   const [stats, setStats] = useState({ reviews: 0, favorites: 0 });
-
-  const API = import.meta.env.VITE_API_URL;
 
   useEffect(() => {
     if (!user) return;
@@ -43,7 +42,7 @@ export const MyProfile = () => {
       }
     };
     fetchStats();
-  }, [user, API]);
+  }, [user]);
 
   if (!user) return null;
 

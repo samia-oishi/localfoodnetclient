@@ -4,6 +4,7 @@ import { AuthContext } from "../provider/AuthProvider";
 import { toast } from "react-toastify";
 import { FaHeart, FaStar } from "react-icons/fa";
 import { CATEGORIES } from "../constants/categories";
+import { API } from "../constants/api";
 
 export const AllReviews = () => {
   const { user } = useContext(AuthContext);
@@ -21,8 +22,6 @@ export const AllReviews = () => {
   const [category, setCategory] = useState(searchParams.get("category") || "");
   const [rating, setRating] = useState(searchParams.get("rating") || "");
   const [sort, setSort] = useState(searchParams.get("sort") || "date_desc");
-
-  const API = import.meta.env.VITE_API_URL;
 
   const fetchReviews = async () => {
     setLoading(true);

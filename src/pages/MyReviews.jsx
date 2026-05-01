@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../provider/AuthProvider";
 import { Link } from "react-router";
 import { toast } from "react-toastify";
+import { API } from "../constants/api";
 
 export const MyReviews = () => {
   const { user } = useContext(AuthContext);
@@ -12,7 +13,7 @@ export const MyReviews = () => {
   const fetchMyReviews = async () => {
     try {
       const res = await fetch(
-        `${import.meta.env.VITE_API_URL}/reviews/user/${user.email}`
+        `${API}/reviews/user/${user.email}`
       );
       const data = await res.json();
       setReviews(data);
@@ -31,7 +32,7 @@ export const MyReviews = () => {
 
   const handleDelete = async () => {
     try {
-      const res = await fetch(`${import.meta.env.VITE_API_URL}/reviews/${deleteId}`, {
+      const res = await fetch(`${API}/reviews/${deleteId}`, {
         method: "DELETE",
       });
       const data = await res.json();

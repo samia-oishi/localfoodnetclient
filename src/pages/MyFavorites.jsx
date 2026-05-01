@@ -3,6 +3,7 @@ import { Link } from "react-router";
 import { AuthContext } from "../provider/AuthProvider";
 import { toast } from "react-toastify";
 import { FaStar, FaTrash } from "react-icons/fa";
+import { API } from "../constants/api";
 
 export const MyFavorites = () => {
   const { user } = useContext(AuthContext);
@@ -12,7 +13,7 @@ export const MyFavorites = () => {
   const fetchFavorites = async () => {
     try {
       const res = await fetch(
-        `${import.meta.env.VITE_API_URL}/favorites/${user.email}`
+        `${API}/favorites/${user.email}`
       );
       const data = await res.json();
       setFavorites(data);
@@ -30,7 +31,7 @@ export const MyFavorites = () => {
   const handleRemove = async (id) => {
     try {
       const res = await fetch(
-        `${import.meta.env.VITE_API_URL}/favorites/${id}`,
+        `${API}/favorites/${id}`,
         { method: "DELETE" }
       );
       const data = await res.json();

@@ -6,6 +6,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { FaStar, FaUserPlus, FaSearch, FaPenFancy } from "react-icons/fa";
+import { API } from "../constants/api";
 
 const slides = [
   {
@@ -74,7 +75,7 @@ export const Home = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch(`${import.meta.env.VITE_API_URL}/reviews/top`)
+    fetch(`${API}/reviews/top`)
       .then((res) => res.json())
       .then((data) => {
         setFeatured(data);

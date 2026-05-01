@@ -3,6 +3,7 @@ import { AuthContext } from "../provider/AuthProvider";
 import { useNavigate } from "react-router";
 import { toast } from "react-toastify";
 import { CATEGORIES } from "../constants/categories";
+import { API } from "../constants/api";
 
 export const AddReview = () => {
   const { user } = useContext(AuthContext);
@@ -27,7 +28,7 @@ export const AddReview = () => {
     };
 
     try {
-      const res = await fetch(`${import.meta.env.VITE_API_URL}/reviews`, {
+      const res = await fetch(`${API}/reviews`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(review),
