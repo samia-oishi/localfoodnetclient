@@ -43,8 +43,8 @@ export const Register = () => {
     }
 
     try {
-      await createUser(email, password);
-      await updateUserProfile(name, photo);
+      const result = await createUser(email, password);
+      await updateUserProfile(result.user, name, photo);
       navigate("/");
     } catch (err) {
       toast.error(err.message);
