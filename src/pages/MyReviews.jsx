@@ -67,7 +67,7 @@ export const MyReviews = () => {
         </div>
       ) : (
         <div className="overflow-x-auto">
-          <table className="table">
+          <table className="table table-zebra align-middle">
             <thead>
               <tr>
                 <th>Image</th>
@@ -80,29 +80,35 @@ export const MyReviews = () => {
             <tbody>
               {reviews.map((review) => (
                 <tr key={review._id}>
-                  <td>
+                  <td className="align-middle">
                     <img
                       src={review.foodImage}
                       alt={review.foodName}
-                      className="w-16 h-16 object-cover rounded"
+                      className="w-16 h-16 object-cover rounded block"
                     />
                   </td>
-                  <td className="font-semibold">{review.foodName}</td>
-                  <td>{review.restaurantName}</td>
-                  <td>{new Date(review.date).toLocaleDateString()}</td>
-                  <td className="flex gap-2">
-                    <Link
-                      to={`/edit-review/${review._id}`}
-                      className="btn btn-secondary btn-sm"
-                    >
-                      Edit
-                    </Link>
-                    <button
-                      onClick={() => setDeleteId(review._id)}
-                      className="btn btn-error btn-sm"
-                    >
-                      Delete
-                    </button>
+                  <td className="font-semibold align-middle">
+                    {review.foodName}
+                  </td>
+                  <td className="align-middle">{review.restaurantName}</td>
+                  <td className="align-middle whitespace-nowrap">
+                    {new Date(review.date).toLocaleDateString()}
+                  </td>
+                  <td className="align-middle">
+                    <div className="flex gap-2">
+                      <Link
+                        to={`/edit-review/${review._id}`}
+                        className="btn btn-secondary btn-sm"
+                      >
+                        Edit
+                      </Link>
+                      <button
+                        onClick={() => setDeleteId(review._id)}
+                        className="btn btn-error btn-sm"
+                      >
+                        Delete
+                      </button>
+                    </div>
                   </td>
                 </tr>
               ))}
