@@ -60,7 +60,7 @@ export const Header = () => {
           to="/"
           className="btn btn-ghost text-xl font-bold flex items-center gap-2"
         >
-          <GiHotMeal className="text-orange-500 text-2xl" />
+          <GiHotMeal className="text-primary text-2xl" />
           <span className="hidden sm:inline">Local Food Lovers</span>
         </Link>
       </div>
@@ -78,7 +78,7 @@ export const Header = () => {
               className="btn btn-ghost btn-circle avatar"
               title={user.displayName || user.email}
             >
-              <div className="w-10 rounded-full ring ring-orange-400 ring-offset-base-100 ring-offset-1">
+              <div className="w-10 rounded-full ring ring-primary ring-offset-base-100 ring-offset-1">
                 <img
                   alt={user.displayName || "user"}
                   src={

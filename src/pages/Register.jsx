@@ -162,7 +162,7 @@ export const Register = () => {
 
               <p className="text-center mt-4">
                 Already have an account?{" "}
-                <Link to="/login" className="text-blue-600 underline">
+                <Link to="/login" className="link link-primary">
                   Login
                 </Link>
               </p>

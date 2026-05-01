@@ -1,2 +1,51 @@
 @import "tailwindcss";
-@plugin "daisyui";
+@plugin "daisyui" {
+  themes: foodlovers --default;
+}
+
+@plugin "daisyui/theme" {
+  name: "foodlovers";
+  default: true;
+  prefersdark: false;
+  color-scheme: light;
+
+  --color-base-100: #fffdf1;
+  --color-base-200: #fff5e1;
+  --color-base-300: #ffce99;
+  --color-base-content: #562f00;
+
+  --color-primary: #ff9644;
+  --color-primary-content: #ffffff;
+
+  --color-secondary: #ffce99;
+  --color-secondary-content: #562f00;
+
+  --color-accent: #562f00;
+  --color-accent-content: #fffdf1;
+
+  --color-neutral: #562f00;
+  --color-neutral-content: #fffdf1;
+
+  --color-info: #562f00;
+  --color-info-content: #fffdf1;
+  --color-success: #10b981;
+  --color-success-content: #ffffff;
+  --color-warning: #f59e0b;
+  --color-warning-content: #2a1700;
+  --color-error: #ef4444;
+  --color-error-content: #ffffff;
+
+  --radius-selector: 0.5rem;
+  --radius-field: 0.5rem;
+  --radius-box: 0.75rem;
+  --size-selector: 0.25rem;
+  --size-field: 0.25rem;
+  --border: 1px;
+  --depth: 1;
+  --noise: 0;
+}
+
+body {
+  background-color: #fffdf1;
+  color: #562f00;
+}

@@ -4,14 +4,14 @@ import { FaXTwitter, FaFacebook, FaInstagram, FaGithub } from "react-icons/fa6";
 
 export const Footer = () => {
   return (
-    <footer className="bg-base-200 text-base-content mt-20">
+    <footer className="bg-accent text-accent-content mt-20">
       <div className="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-3 gap-8">
         <div>
           <Link to="/" className="flex items-center gap-2 text-xl font-bold">
-            <GiHotMeal className="text-orange-500 text-2xl" />
+            <GiHotMeal className="text-primary text-2xl" />
             Local Food Lovers
           </Link>
-          <p className="mt-3 text-sm text-gray-600 max-w-xs">
+          <p className="mt-3 text-sm opacity-90 max-w-xs">
             Celebrating great food, honest opinions, and local flavor — one
             review at a time.
           </p>
@@ -46,7 +46,7 @@ export const Footer = () => {
               target="_blank"
               rel="noreferrer"
               aria-label="X"
-              className="hover:text-orange-500"
+              className="hover:text-primary"
             >
               <FaXTwitter />
             </a>
@@ -55,7 +55,7 @@ export const Footer = () => {
               target="_blank"
               rel="noreferrer"
               aria-label="Facebook"
-              className="hover:text-orange-500"
+              className="hover:text-primary"
             >
               <FaFacebook />
             </a>
@@ -64,7 +64,7 @@ export const Footer = () => {
               target="_blank"
               rel="noreferrer"
               aria-label="Instagram"
-              className="hover:text-orange-500"
+              className="hover:text-primary"
             >
               <FaInstagram />
             </a>
@@ -73,14 +73,14 @@ export const Footer = () => {
               target="_blank"
               rel="noreferrer"
               aria-label="GitHub"
-              className="hover:text-orange-500"
+              className="hover:text-primary"
             >
               <FaGithub />
             </a>
           </div>
         </div>
       </div>
-      <div className="border-t border-base-300 py-4 text-center text-sm text-gray-500">
+      <div className="border-t border-accent-content/20 py-4 text-center text-sm opacity-80">
         © {new Date().getFullYear()} Local Food Lovers Network. All rights
         reserved.
       </div>

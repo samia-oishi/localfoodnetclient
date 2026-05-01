@@ -106,7 +106,7 @@ export const Login = () => {
 
               <p className="text-center mt-4">
                 Don't have an account?{" "}
-                <Link to="/register" className="text-blue-600 underline">
+                <Link to="/register" className="link link-primary">
                   Register
                 </Link>
               </p>
