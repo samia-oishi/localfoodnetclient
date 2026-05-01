@@ -1,6 +1,7 @@
 import { createContext, useEffect, useState } from "react";
 import {
   createUserWithEmailAndPassword,
+  deleteUser,
   onAuthStateChanged,
   signInWithEmailAndPassword,
   signInWithPopup,
@@ -34,12 +35,16 @@ const AuthProvider = ({ children }) => {
   };
 
   // Update user profile (name and photo)
-  const updateUserProfile = (userObj, name, photo) => {
-    return updateProfile(userObj, {
+  const updateUserProfile = async (userObj, name, photo) => {
+    await updateProfile(userObj, {
       displayName: name,
       photoURL: photo,
     });
+    setUser({ ...auth.currentUser });
   };
+
+  // Delete the currently-signed-in Firebase user
+  const deleteAccount = () => deleteUser(auth.currentUser);
 
   // Logout
   const logOutUser = () => {
@@ -63,6 +68,7 @@ const AuthProvider = ({ children }) => {
     signInUser,
     googleSignIn,
     updateUserProfile,
+    deleteAccount,
     logOutUser,
   };
 

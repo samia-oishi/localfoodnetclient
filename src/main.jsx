@@ -13,6 +13,7 @@ import { ReviewDetails } from "./pages/ReviewDetails.jsx";
 import { MyReviews } from "./pages/MyReviews.jsx";
 import { EditReview } from "./pages/EditReview.jsx";
 import { MyFavorites } from "./pages/MyFavorites.jsx";
+import { MyProfile } from "./pages/MyProfile.jsx";
 import { NotFound } from "./pages/NotFound.jsx";
 import PrivateRoute from "./routes/PrivateRoute.jsx";
 
@@ -70,6 +71,14 @@ const router = createBrowserRouter([
         element: (
           <PrivateRoute>
             <MyFavorites />
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "my-profile",
+        element: (
+          <PrivateRoute>
+            <MyProfile />
           </PrivateRoute>
         ),
       },
